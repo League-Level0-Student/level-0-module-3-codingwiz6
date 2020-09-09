@@ -2,13 +2,42 @@
 package _01_else_if._1_robot_color_chooser;
 
 import javax.swing.JOptionPane;
+
+import org.jointheleague.graphical.robot.Robot;
+
 import java.awt.Color;
 
 public class RobotColorChooser {
 	public static void main(String[] args) {
-		
+
 		//1. Create a new Robot
-	    //2. Make the robot draw a shape (this will take more than one line of code)		
+		Robot robot=new Robot("mini");
+	    //2. Make the robot draw a shape (this will take more than one line of code)	
+		for(int j = 0; j< 1000;j++) {
+		String color= JOptionPane.showInputDialog("What pen color do you want? (Blue,Cyan,Green,Pink) ");
+		if(color.equalsIgnoreCase("Blue")) {
+			robot.setPenColor(Color.BLUE);
+		}
+		else if(color.equalsIgnoreCase("Cyan")) {
+			robot.setPenColor(Color.cyan);
+		}
+		else if(color.equalsIgnoreCase("Green")) {
+			robot.setPenColor(Color.green);
+		}
+		else if(color.equalsIgnoreCase("Pink")) {
+			robot.setPenColor(Color.magenta);
+		}
+		else {
+			robot.setRandomPenColor();
+		}
+		
+		robot.setPenWidth(10);
+		robot.penDown();
+		for(int i = 0; i < 4; i++) {
+		robot.move(100);
+		robot.turn(90);
+		}
+		}
 		//3. Set the pen width to 10
 		//4. Ask the user what color pen they would like the robot to draw with
 		//5. Use an if/else statement to set the pen color that the user requested
