@@ -16,8 +16,8 @@ void draw() {
 Use modulo to make the colors alternate between yellow and black
 */
 int v= 0;
-for(int b=0; b<10;b++){
-  if(v % 2==0){
+for(int b=0; b<46;b++){
+  if(b % 2==0){
     fill(#F7FA62);
   }
   else{
@@ -26,7 +26,7 @@ for(int b=0; b<10;b++){
   ellipse(v,v,50,50);
   v+=10;
 }
-
+drawBeeFace(450,450);
 /*
 Now put his head on using drawBeeFace(x,y)
 */
